@@ -48,7 +48,7 @@ CREATE TABLE `clients` (
 
 --
 -- Dumping data for table `clients`
---
+-- 
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
