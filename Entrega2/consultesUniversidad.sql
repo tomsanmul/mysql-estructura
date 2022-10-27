@@ -38,8 +38,9 @@ SELECT DISTINCT persona.apellido1, persona.apellido2, persona.nombre FROM person
 -- 3. Retorna un llistat amb els departaments que no tenen professors/es associats.
 SELECT DISTINCT departamento.nombre as 'nombre_departamento' FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento LEFT JOIN persona ON persona.id = profesor.id_profesor WHERE persona.nombre IS NULL;
 
--- 4. Retorna un llistat amb els professors/es que no imparteixen cap assignatura.
-
+-- 4. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. 
+SELECT DISTINCT persona.nombre, persona.apellido1, persona.apellido2, persona.tipo FROM persona LEFT JOIN profesor ON persona.id = profesor.id_profesor LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor WHERE persona.tipo ='profesor' AND asignatura.id_profesor IS NULL;
+-- FALLA!!!
 
 -- 5. Retorna un llistat amb les assignatures que no tenen un professor/a assignat.
 
