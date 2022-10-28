@@ -1,4 +1,4 @@
--- Active: 1648628258354@@127.0.0.1@3306@universidad
+-- Active: 1666904461314@@127.0.0.1@3306@universidad
 -- 1. Retorna un llistat amb el primer cognom, segon cognom i el nom de tots els/les alumnes. El llistat haurà d'estar ordenat alfabèticament de menor a major pel primer cognom, segon cognom i nom.
 SELECT apellido1, apellido2, nombre FROM universidad.persona WHERE tipo = 'alumno' ORDER BY apellido1, apellido2, nombre;
 
@@ -40,9 +40,9 @@ SELECT DISTINCT departamento.nombre as 'nombre_departamento' FROM departamento L
 
 -- 4. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. 
 SELECT DISTINCT persona.nombre, persona.apellido1, persona.apellido2, persona.tipo FROM persona LEFT JOIN profesor ON persona.id = profesor.id_profesor LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor WHERE persona.tipo ='profesor' AND asignatura.id_profesor IS NULL;
--- FALLA!!!
 
 -- 5. Retorna un llistat amb les assignatures que no tenen un professor/a assignat.
-
+SELECT DISTINCT asignatura.nombre FROM asignatura WHERE asignatura.id_profesor IS NULL;
 
 -- 6. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar.
+SELECT DISTINCT departamento.nombre FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor LEFT JOIN alumno_se_matricula_asignatura ON asignatura.id = alumno_se_matricula_asignatura.id_asignatura LEFT JOIN curso_escolar ON alumno_se_matricula_asignatura.id_curso_escolar = curso_escolar.id  WHERE curso_escolar.id IS NULL;
