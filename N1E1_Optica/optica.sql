@@ -153,7 +153,7 @@ CREATE TABLE `ulleres` (
 
 LOCK TABLES `ulleres` WRITE;
 /*!40000 ALTER TABLE `ulleres` DISABLE KEYS */;
-INSERT INTO `ulleres` VALUES (1,1,'Ray-ban',2,2,'flotant','blau','verd','verd'),(2,3,'Oakley',1,1,'pasta','negre','vermell','vermell'),(3,1,'Ray-ban',2,2,'metàl·lica','vermell','blau ','blau'),(4,3,'Polaroid',1,1,'flotant','negre','groc','groc'),(5,2,'Polaroid',2,2,'pasta','blanc','lila','lila');
+INSERT INTO `ulleres` VALUES (1,1,'Ray-ban',2,2,'flotant','blau','verd','verd'),(2,3,'Oakley',1,1,'pasta','negre','vermell','vermell'),(3,1,'Ray-ban',2,2,'metàl·lica','vermell','blau ','blau'),(4,2,'Polaroid',1,1,'flotant','negre','groc','groc'),(5,2,'Polaroid',2,2,'pasta','blanc','lila','lila');
 /*!40000 ALTER TABLE `ulleres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02  9:58:08
+-- Dump completed on 2022-11-02 10:02:15
